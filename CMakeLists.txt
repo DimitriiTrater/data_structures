@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.0)
-project(data_structures VERSION 0.1.0)
+project(data_structures VERSION 0.1.0 LANGUAGES CXX)
 
 include(CTest)
 enable_testing()
