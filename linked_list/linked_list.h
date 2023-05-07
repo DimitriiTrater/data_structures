@@ -1,7 +1,7 @@
 #pragma once
 
 template<class T>
-class LinkdeList
+class LinkedList
 {
 private:
     struct Node
@@ -15,8 +15,8 @@ private:
     Node *head;
 
 public:
-    LinkdeList();
-    ~LinkdeList();
+    LinkedList();
+    ~LinkedList();
 
     void push_back(T data);
     int size() const noexcept;

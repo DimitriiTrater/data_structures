@@ -1,15 +1,15 @@
 #include "linked_list.h"
 
 template<class T>
-LinkdeList<T>::LinkdeList() : _size(0), head(nullptr)
+LinkedList<T>::LinkedList() : _size(0), head(nullptr)
 {}
 
 template<class T>
-LinkdeList<T>::~LinkdeList()
+LinkedList<T>::~LinkedList()
 {}
 
 template<class T>
-void LinkdeList<T>::push_back(T data)
+void LinkedList<T>::push_back(T data)
 {
 
     if (!head)
@@ -25,5 +25,5 @@ void LinkdeList<T>::push_back(T data)
 }
 
 template<class T>
-int LinkdeList<T>::size() const noexcept
+int LinkedList<T>::size() const noexcept
 {return this->size;} 

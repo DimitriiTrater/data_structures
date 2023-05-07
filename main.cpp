@@ -4,7 +4,7 @@
 
 class linked_list_test
 {
-    LinkdeList<int> list;
+    LinkedList<int> list;
 
     int push_back_test()
     {
