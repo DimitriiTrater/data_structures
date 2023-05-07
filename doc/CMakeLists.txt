@@ -1,0 +1,10 @@
+find_package(Doxygen)
+
+if (DOXYGEN_FOUND)
+    if (NOT DOXYGEN_OUTPUT_LANGUAGE)
+        set(DOXYGEN_OUTPUT_LANGUAGE Russian)
+    endif()
+    message(STATUS "Lang:" ${DOXYGEN_OUTPUT_LANGUAGE})
+    configure_file(Doxyfile.in Doxyifile)
+    add_custom_target(doc COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
+endif()
