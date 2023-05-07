@@ -14,8 +14,10 @@ private:
 
     int size;
     Node *head;
-    
+
 public:
     LinkdeList();
     ~LinkdeList();
+
+    void push_back(T data);
 };
