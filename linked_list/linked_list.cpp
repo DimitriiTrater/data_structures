@@ -23,7 +23,3 @@ void LinkedList<T>::push_back(T data)
     }
     _size++;
 }
-
-template<class T>
-int LinkedList<T>::size() const noexcept
-{return this->size;} 

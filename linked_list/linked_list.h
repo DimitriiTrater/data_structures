@@ -19,5 +19,5 @@ public:
     ~LinkedList();
 
     void push_back(T data);
-    int size() const noexcept;
+    int size() const noexcept {return this->_size;}
 };
