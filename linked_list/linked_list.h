@@ -11,7 +11,7 @@ private:
         Node(T data=T(), Node* next=nullptr) : data(data), next(next) {}
     };
 
-    int size;
+    int _size;
     Node *head;
 
 public:
@@ -19,4 +19,5 @@ public:
     ~LinkdeList();
 
     void push_back(T data);
+    int size() const noexcept;
 };
