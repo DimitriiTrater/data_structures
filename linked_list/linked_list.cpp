@@ -1,7 +1,7 @@
 #include "linked_list.h"
 
 template<class T>
-LinkdeList<T>::LinkdeList()
+LinkdeList<T>::LinkdeList() : size(0), head(nullptr)
 {}
 
 template<class T>
