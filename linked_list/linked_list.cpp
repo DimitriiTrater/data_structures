@@ -23,3 +23,20 @@ void LinkedList<T>::push_back(T data)
     }
     _size++;
 }
+
+
+
+template<class T>
+T& LinkedList<T>::operator[](const int index)
+{
+    int counter = 0;
+    Node* current = this->head;
+    while (current)
+    {
+        if (counter == index) return current->data;
+        current = current->next;
+        counter++;
+    }
+
+
+}

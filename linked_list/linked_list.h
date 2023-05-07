@@ -20,4 +20,5 @@ public:
 
     void push_back(T data);
     int size() const noexcept {return this->_size;}
+    T& operator[](const int index);
 };
