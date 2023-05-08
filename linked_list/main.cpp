@@ -4,7 +4,7 @@
 #include <iostream>
 #include "linked_list.hpp"
 
-void test_push_back()
+int test_push_back()
 {
     LinkedList<int> t;
     std::cout << std::endl;
@@ -31,10 +31,12 @@ void test_push_back()
     std::cout << "//////////////////////" << std::endl;
 
     std::cout << std::endl;
+    
+    return 0;
 }
 
 
-void test_push_front()
+int test_push_front()
 {
     LinkedList<int> t;
     std::cout << std::endl;
@@ -62,10 +64,11 @@ void test_push_front()
     std::cout << "//////////////////////" << std::endl;
 
     std::cout << std::endl;
+    return 0;
 
 }
 
-void test_pop_front()
+int test_pop_front()
 {
     LinkedList<int> t;
     std::cout << std::endl;
@@ -94,10 +97,12 @@ void test_pop_front()
     std::cout << "//////////////////////" << std::endl;
 
     std::cout << std::endl;
+    return 0;
+
 
 }
 
-void test_insert()
+int test_insert()
 {
     LinkedList<int> t;
     std::cout << std::endl;
@@ -118,11 +123,10 @@ void test_insert()
     std::cout << "//////////////////////" << std::endl;
     std::cout << std::endl;
 
-
-
+    return 0;
 }
 
-void test_clear()
+int test_clear()
 {
 
     LinkedList<int> t;
@@ -142,18 +146,65 @@ void test_clear()
     std::cout << "test_clear() passed" << std::endl;
     std::cout << "//////////////////////" << std::endl;
     std::cout << std::endl;
+    return 0;
+
 }
 
+int test_remove()
+{
+    LinkedList<int> t;
+    std::cout << std::endl;
+    std::cout << "//////////////////////" << std::endl;
+    std::cout << "test_remove() start" << std::endl;
+
+    for (int i = 0; i < 100; i++)
+        t.push_back(i);
+
+    std::cout << "Before remove() size: " << t.size() << std::endl;
+
+    for (int i = 0; i < 100; i++)
+        t.remove(99-i);
+
+    std::cout << "After remove() size: " << t.size() << std::endl;
+
+    std::cout << "test_remove() passed" << std::endl;
+    std::cout << "//////////////////////" << std::endl;
+    std::cout << std::endl;
+    return 0;
+
+}
+
+int test_pop_back()
+{
+    LinkedList<int> t;
+    std::cout << std::endl;
+    std::cout << "//////////////////////" << std::endl;
+    std::cout << "test_pop_back() start" << std::endl;
+
+    for (int i = 0; i < 100; i++)
+        t.push_back(i);
+
+    std::cout << "Before pop_back() size: " << t.size() << std::endl;
+
+    for (int i = 0; i < 100; i++)
+        t.pop_back();
+
+    std::cout << "After pop_back() size: " << t.size() << std::endl;
+
+    std::cout << "test_pop_back() passed" << std::endl;
+    std::cout << "//////////////////////" << std::endl;
+    std::cout << std::endl;
+    return 0;
+
+}
 
 
 
 int main(int, char**) 
 {
-    test_push_back();
-    test_push_front();
-    test_pop_front();
-    test_insert();
-    test_clear();
+
+    if (!(test_pop_back() || test_insert() || test_clear() || test_remove() || test_pop_front() || test_push_back() || test_push_front()))
+        std::cout << "tests passed" << std::endl;
 
     return 0;
 }
