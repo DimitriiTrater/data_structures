@@ -25,6 +25,7 @@ public:
     void push_back(T data);
     void push_front(T data);
 
+    void pop_back();
     void pop_front();
     
     void insert(int index, T data);
@@ -71,6 +72,13 @@ void LinkedList<T>::push_front(T data)
 {
     head = new Node(data, head);
     _size++;
+}
+
+template<class T>
+void LinkedList<T>::pop_back()
+{
+    if (!head) throw std::out_of_range("List is empty");
+    remove(_size - 1);
 }
 
 
