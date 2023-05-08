@@ -1,5 +1,6 @@
 #pragma once
 
+// Linked List implementation
 
 template<class T>
 class LinkedList
@@ -20,6 +21,8 @@ public:
     ~LinkedList();
 
     void push_back(T data);
+    void pop_front();
+
     int size() const noexcept;
     T& operator[](const int index);
 };
@@ -33,8 +36,10 @@ LinkedList<T>::LinkedList() : _size(0), head(nullptr)
 
 template<class T>
 LinkedList<T>::~LinkedList()
-{}
+{
 
+
+}
 
 
 template<class T>
@@ -51,6 +56,13 @@ void LinkedList<T>::push_back(T data)
         current->next = new Node(data);
     }
     _size++;
+}
+
+
+template<class T>
+void LinkedList<T>::pop_front()
+{
+    
 }
 
 template<class T>
