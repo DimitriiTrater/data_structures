@@ -1,8 +1,9 @@
 #pragma once
+#include <stdexcept>
 
 // Linked List implementation
 
-#include <stdexcept>
+
 template<class T>
 class LinkedList
 {
@@ -23,10 +24,12 @@ public:
 
     void push_back(T data);
     void pop_front();
+    void clear();
 
     int size() const noexcept;
     T& operator[](const int index); // its trow out of range exception
 };
+
 
 
 
@@ -72,6 +75,9 @@ void LinkedList<T>::pop_front()
     _size--;
 }
 
+
+template<class T>
+void LinkedList<T>::clear() { while (_size) pop_front(); }
 
 
 template<class T>
