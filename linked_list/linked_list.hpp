@@ -2,6 +2,7 @@
 
 // Linked List implementation
 
+#include <stdexcept>
 template<class T>
 class LinkedList
 {
@@ -24,7 +25,7 @@ public:
     void pop_front();
 
     int size() const noexcept;
-    T& operator[](const int index);
+    T& operator[](const int index); // its trow out of range exception
 };
 
 
@@ -76,6 +77,7 @@ void LinkedList<T>::pop_front()
 template<class T>
 int LinkedList<T>::size() const noexcept {return this->_size;}
 
+
 template<class T>
 T& LinkedList<T>::operator[](const int index)
 {
@@ -87,5 +89,6 @@ T& LinkedList<T>::operator[](const int index)
         current = current->next;
         counter++;
     }
+    throw std::out_of_range("Index out of range");
 }
 
