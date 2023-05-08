@@ -27,6 +27,7 @@ public:
 
     void pop_front();
     
+    void insert(int index, T data);
     void clear();
 
 
@@ -83,6 +84,26 @@ void LinkedList<T>::pop_front()
     _size--;
 }
 
+
+template<class T>
+void LinkedList<T>::insert(int index, T data)
+{
+    if (!index)
+    { 
+        push_front(data);
+        return;
+    }
+
+    Node* prev = this->head;
+
+    for (int i = 0; i < index - 1; i++) 
+        prev = prev->next;
+    
+    Node* new_node = new Node(data, prev->next);
+    prev->next = new_node;
+
+    _size++;
+}
 
 template<class T>
 void LinkedList<T>::clear() { while (_size) pop_front(); }
