@@ -23,7 +23,8 @@ public:
     ~LinkedList();
 
     void push_back(T data);
-    
+    void push_front(T data);
+
     void pop_front();
     
     void clear();
@@ -58,6 +59,14 @@ void LinkedList<T>::push_back(T data)
             current = current->next;
         current->next = new Node(data);
     }
+    _size++;
+}
+
+
+template<class T>
+void LinkedList<T>::push_front(T data)
+{
+    head = new Node(data, head);
     _size++;
 }
 
