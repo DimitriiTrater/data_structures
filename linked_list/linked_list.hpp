@@ -23,8 +23,11 @@ public:
     ~LinkedList();
 
     void push_back(T data);
+    
     void pop_front();
+    
     void clear();
+
 
     int size() const noexcept;
     T& operator[](const int index); // its trow out of range exception
@@ -39,11 +42,7 @@ LinkedList<T>::LinkedList() : _size(0), head(nullptr)
 
 
 template<class T>
-LinkedList<T>::~LinkedList()
-{
-
-
-}
+LinkedList<T>::~LinkedList() { clear(); }
 
 
 template<class T>
