@@ -62,8 +62,16 @@ void LinkedList<T>::push_back(T data)
 template<class T>
 void LinkedList<T>::pop_front()
 {
-    
+    Node* temp = head;
+
+    head = head->next;
+
+    delete temp;
+
+    _size--;
 }
+
+
 
 template<class T>
 int LinkedList<T>::size() const noexcept {return this->_size;}
@@ -79,7 +87,5 @@ T& LinkedList<T>::operator[](const int index)
         current = current->next;
         counter++;
     }
-
-
 }
 
