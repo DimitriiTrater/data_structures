@@ -1,4 +1,6 @@
-#pragma once
+#ifndef LINKED_LIST_HPP
+#define LINKED_LIST_HPP
+
 #include <stdexcept>
 
 // Linked List implementation
@@ -35,10 +37,10 @@ public:
 
 
     int size() const noexcept;
-    T& operator[](const int index); // its trow out of range exception
+    T& operator[](const int index); // its throw out of range exception
 };
 
-
+#endif // LINKED_LIST_HPP
 
 
 template<class T>
