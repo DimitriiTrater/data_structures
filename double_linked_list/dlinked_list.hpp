@@ -2,9 +2,6 @@
 #define DLINKED_LIST_HPP
 
 
-#include <type_traits>
-
-
 template<class T>
 class DLinkedList
 {
@@ -26,6 +23,8 @@ public:
     DLinkedList();
     ~DLinkedList();
 
+    void push_back(T data);
+    
     int size() const noexcept;
 };
 
@@ -34,6 +33,31 @@ public:
 
 template<class T>
 DLinkedList<T>::DLinkedList() : _size(0), head(nullptr), tail(nullptr) {}
+
+template<class T>
+DLinkedList<T>::~DLinkedList(){}
+
+template<class T>
+void DLinkedList<T>::push_back(T data)
+{
+
+    if (!head)
+    {
+        head = new Node(data);
+        tail = head;
+    }
+    else 
+    {
+        Node* current = this->head;
+        while(current->next)
+            current = current->next;
+        current->next = new Node(data);
+        current->next->prev = this->tail;
+        tail = current->next;
+    }
+    _size++;
+}
+
 
 
 
