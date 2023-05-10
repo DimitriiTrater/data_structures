@@ -107,9 +107,11 @@ void DLinkedList<T>::pop_front()
     
     Node* temp = head;
 
-    head = head->next;
-    head->prev = nullptr;
-
+    if (head != tail)
+    {
+        head = head->next;
+        head->prev = nullptr;
+    }
     delete temp;
 
     _size--;
