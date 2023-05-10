@@ -16,8 +16,11 @@ struct Node
     Node* next;
     Node* prev;
     Node(T data=T(), Node* next=nullptr, Node* prev=nullptr) : data(data), next(next), prev(prev) {}
-
 };
+
+int _size;
+Node* head;
+Node* tail;
 
 public:
     DLinkedList();
@@ -25,3 +28,7 @@ public:
 };
 
 #endif // DLINKED_LIST_HPP
+
+
+template<class T>
+DLinkedList<T>::DLinkedList() : _size(0), head(nullptr), tail(nullptr) {}
