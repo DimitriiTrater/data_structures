@@ -2,6 +2,7 @@
 #define DLINKED_LIST_HPP
 
 
+#include <stdexcept>
 template<class T>
 class DLinkedList
 {
@@ -29,6 +30,8 @@ public:
     void clear();
 
     int size() const noexcept;
+    T& operator[](const int index); // its throw out of range exception
+
 };
 
 #endif // DLINKED_LIST_HPP
@@ -101,11 +104,12 @@ void DLinkedList<T>::pop_back()
 template<class T>
 void DLinkedList<T>::pop_front()
 {
+    
     Node* temp = head;
 
     head = head->next;
     head->prev = nullptr;
-    
+
     delete temp;
 
     _size--;
@@ -118,4 +122,20 @@ void DLinkedList<T>::clear() { while (_size) pop_front(); }
 
 template<class T>
 int DLinkedList<T>::size() const noexcept {return this->_size;}
+
+
+
+template<class T>
+T& DLinkedList<T>::operator[](const int index)
+{
+    int counter = 0;
+    Node* current = this->head;
+    while (current)
+    {
+        if (counter == index) return current->data;
+        current = current->next;
+        counter++;
+    }
+    throw std::out_of_range("index out of range");
+}
 

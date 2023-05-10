@@ -1,4 +1,5 @@
 #include "dlinked_list.hpp"
+#include <iostream>
 
 
 int main()
@@ -9,8 +10,7 @@ int main()
     l.push_front(3);
     l.push_front(4);
 
-    l.pop_front();
-    l.pop_front();
+    std::cout << l[0] << std::endl;
 
     return 0;
 }
