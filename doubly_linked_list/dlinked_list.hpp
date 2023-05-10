@@ -23,6 +23,7 @@ public:
 
     void push_front(T data);
     void push_back(T data);
+    void pop_back();
     void pop_front();
     
     void clear();
@@ -82,6 +83,20 @@ void DLinkedList<T>::push_back(T data)
     }
     _size++;
 }
+
+template<class T>
+void DLinkedList<T>::pop_back()
+{
+    Node* temp = tail;
+
+    tail = tail->prev;
+    tail->next = nullptr;
+
+    delete temp;
+
+    _size--;
+}
+
 
 template<class T>
 void DLinkedList<T>::pop_front()
