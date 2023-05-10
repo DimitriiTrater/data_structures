@@ -25,6 +25,8 @@ Node* tail;
 public:
     DLinkedList();
     ~DLinkedList();
+
+    int size() const noexcept;
 };
 
 #endif // DLINKED_LIST_HPP
@@ -32,3 +34,9 @@ public:
 
 template<class T>
 DLinkedList<T>::DLinkedList() : _size(0), head(nullptr), tail(nullptr) {}
+
+
+
+template<class T>
+int DLinkedList<T>::size() const noexcept {return this->_size;}
+
