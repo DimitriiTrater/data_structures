@@ -37,7 +37,7 @@ template<class T>
 DLinkedList<T>::DLinkedList() : _size(0), head(nullptr), tail(nullptr) {}
 
 template<class T>
-DLinkedList<T>::~DLinkedList(){}
+DLinkedList<T>::~DLinkedList(){ clear();}
 
 
 template<class T>
