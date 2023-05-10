@@ -25,6 +25,8 @@ public:
     void push_back(T data);
     void pop_front();
     
+    void clear();
+
     int size() const noexcept;
 };
 
@@ -94,6 +96,9 @@ void DLinkedList<T>::pop_front()
     _size--;
 }
 
+
+template<class T>
+void DLinkedList<T>::clear() { while (_size) pop_front(); }
 
 
 template<class T>
