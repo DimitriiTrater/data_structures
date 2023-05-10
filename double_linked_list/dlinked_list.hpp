@@ -5,8 +5,6 @@
 template<class T>
 class DLinkedList
 {
-
-
 struct Node
 {
     int data;
@@ -24,6 +22,7 @@ public:
     ~DLinkedList();
 
     void push_back(T data);
+    void pop_front();
     
     int size() const noexcept;
 };
@@ -58,6 +57,17 @@ void DLinkedList<T>::push_back(T data)
     _size++;
 }
 
+template<class T>
+void DLinkedList<T>::pop_front()
+{
+    Node* temp = head;
+
+    head = head->next;
+
+    delete temp;
+
+    _size--;
+}
 
 
 
