@@ -20,6 +20,20 @@ public:
     }
 
     ~string() { delete [] _str; }
+
+    string& operator=(const string& other)
+    {
+        if(!_str) delete [] _str;
+        _len = other._len;
+        _str = new char[_len+1];
+
+        for (int i = 0; i < _len; i++)
+            _str[i] = other._str[i];
+        _str[_len] = '\0';
+        return *this;
+    }
+
+
 };
 
 
