@@ -33,6 +33,26 @@ public:
         return *this;
     }
 
+    string operator+(const string& other) const
+    {
+        string result;
+
+        result._len = _len + other._len;
+
+        result._str = new char[result._len+1];
+        
+        int i = 0;
+        
+        for (; i < _len; i++)
+            result._str[i] = _str[i];
+
+        for (int j = 0; j < other._len; i++, j++)
+            result._str[i] = other._str[j];
+        
+        result._str[result._len] = '\0';
+
+        return result;
+    }
 
 };
 
