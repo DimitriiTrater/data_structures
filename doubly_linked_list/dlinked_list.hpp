@@ -28,6 +28,7 @@ public:
     void pop_front();
     
     void insert(int index, T data);
+    void remove(int index);
 
 
     void clear();
@@ -141,6 +142,29 @@ void DLinkedList<T>::insert(int index, T data)
 }
 
 
+template <class T>
+void DLinkedList<T>::remove(int index)
+{
+    if(!index)
+    {
+        pop_front();
+        return;
+    }
+
+    Node* prev = this->head;
+
+    for (int i = 0; i < index - 1; i++)
+        prev = prev->next;
+    
+    Node* temp = prev->next;
+
+    prev->next = temp->next;
+    temp->next->prev = prev;
+
+    delete temp;
+
+    _size--;
+}
 
 
 
