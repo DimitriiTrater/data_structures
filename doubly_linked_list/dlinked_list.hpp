@@ -30,7 +30,6 @@ public:
     void insert(int index, T data);
     void remove(int index);
 
-
     void clear();
 
     int size() const noexcept;
@@ -43,6 +42,7 @@ public:
 
 template<class T>
 DLinkedList<T>::DLinkedList() : _size(0), head(nullptr), tail(nullptr) {}
+
 
 template<class T>
 DLinkedList<T>::~DLinkedList(){ clear();}
@@ -90,6 +90,7 @@ void DLinkedList<T>::push_back(T data)
     _size++;
 }
 
+
 template<class T>
 void DLinkedList<T>::pop_back()
 {
@@ -119,6 +120,7 @@ void DLinkedList<T>::pop_front()
 
     _size--;
 }
+
 
 template<class T>
 void DLinkedList<T>::insert(int index, T data)
@@ -167,16 +169,12 @@ void DLinkedList<T>::remove(int index)
 }
 
 
-
-
-
 template<class T>
 void DLinkedList<T>::clear() { while (_size) pop_front(); }
 
 
 template<class T>
 int DLinkedList<T>::size() const noexcept {return this->_size;}
-
 
 
 template<class T>
@@ -192,4 +190,3 @@ T& DLinkedList<T>::operator[](const int index)
     }
     throw std::out_of_range("index out of range");
 }
-
