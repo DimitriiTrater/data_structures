@@ -19,7 +19,7 @@ public:
         _str[_len] = '\0';
     }
 
-    ~string();
+    ~string() { delete [] _str; }
 };
 
 
