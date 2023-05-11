@@ -2,9 +2,9 @@
 
 int main()
 {
-    string str, f, s;
+    string f, s;
     f = "ttt";
     s = "cc";
-    str = f + s;
+    string str(f);
     return 0;
 }

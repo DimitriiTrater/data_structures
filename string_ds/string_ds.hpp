@@ -19,6 +19,14 @@ public:
         _str[_len] = '\0';
     }
 
+
+    string(const string& other) : _str(new char[other._len+1]), _len(other._len) 
+    {
+        for (int i = 0; i < _len; i++)
+            _str[i] = other._str[i];
+        _str[_len] = '\0';
+    }
+
     ~string() { delete [] _str; }
 
     string& operator=(const string& other)
