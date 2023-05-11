@@ -3,8 +3,7 @@
 int main()
 {
     string f, s;
-    f = "ttt";
-    s = "cc";
-    string str(f);
+    f = "cc";
+    s = "ct";
     return 0;
 }

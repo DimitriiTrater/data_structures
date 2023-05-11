@@ -67,6 +67,15 @@ public:
     }
 
 
+    bool operator==(const string& other) const
+    {
+        if(_len != other._len) return false;
+        for (int i = 0; i < _len; i++) 
+            if (_str[i]!= other._str[i]) return false;
+        return true;
+    }
+
+
     int length() const { return _len; }
     int size()   const { return _len; }
 
