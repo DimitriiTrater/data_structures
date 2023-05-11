@@ -75,6 +75,9 @@ public:
         return true;
     }
 
+    bool operator!=(const string& other) const 
+    { return !(this->operator==(other)); }
+
 
     int length() const { return _len; }
     int size()   const { return _len; }
