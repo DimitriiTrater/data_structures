@@ -10,7 +10,7 @@ int _len;
 
 
 public:
-    string(): _str(nullptr) {}
+    string(): _str(nullptr), _len(0) {}
 
 
     string(const char* str) : _str(new char[strlen(str)+1]), _len(strlen(str))
