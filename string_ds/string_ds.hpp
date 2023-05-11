@@ -29,6 +29,11 @@ public:
     }
 
 
+    string(string&& other) : _str(other._str), _len(other._len)
+    {
+        other._str = nullptr;
+    }
+
     ~string() { delete [] _str; }
 
 
