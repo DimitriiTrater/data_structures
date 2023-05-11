@@ -75,8 +75,15 @@ public:
         return true;
     }
 
+
     bool operator!=(const string& other) const 
     { return !(this->operator==(other)); }
+
+
+    char& operator[](int i)
+    {
+        return _str[i];
+    }
 
 
     int length() const { return _len; }
