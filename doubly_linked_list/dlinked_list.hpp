@@ -27,6 +27,9 @@ public:
     void pop_back();
     void pop_front();
     
+    void insert(int index, T data);
+
+
     void clear();
 
     int size() const noexcept;
@@ -51,7 +54,6 @@ void DLinkedList<T>::push_front(T data)
     {
         head = new Node(data, nullptr, nullptr);
         tail = head;
-        
     }
     else 
     {
@@ -116,6 +118,32 @@ void DLinkedList<T>::pop_front()
 
     _size--;
 }
+
+template<class T>
+void DLinkedList<T>::insert(int index, T data)
+{
+    if (!index)
+    { 
+        push_front(data);
+        return;
+    }
+
+    Node* prev = this->head;
+
+    for (int i = 0; i < index; i++) 
+        prev = prev->next;
+    
+    Node* new_node = new Node(data, prev, prev->prev);
+    prev->prev->next = new_node;
+    prev->prev = new_node;
+
+    _size++;
+}
+
+
+
+
+
 
 
 template<class T>
