@@ -12,6 +12,7 @@ int _len;
 public:
     string(): _str(nullptr) {}
 
+
     string(const char* str) : _str(new char[strlen(str)+1]), _len(strlen(str))
     {
         for (int i = 0; i < _len; i++)
@@ -27,7 +28,9 @@ public:
         _str[_len] = '\0';
     }
 
+
     ~string() { delete [] _str; }
+
 
     string& operator=(const string& other)
     {
@@ -40,6 +43,7 @@ public:
         _str[_len] = '\0';
         return *this;
     }
+
 
     string operator+(const string& other) const
     {
@@ -61,6 +65,10 @@ public:
 
         return result;
     }
+
+
+    int length() const { return _len; }
+    int size() const { return _len;}
 
 };
 
