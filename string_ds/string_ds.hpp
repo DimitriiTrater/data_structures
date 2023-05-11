@@ -68,7 +68,7 @@ public:
 
 
     int length() const { return _len; }
-    int size() const { return _len;}
+    int size()   const { return _len; }
 
 };
 
