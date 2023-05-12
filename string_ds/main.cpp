@@ -6,6 +6,7 @@ int main()
     string f, s;
     f = "cc";
     s = "ct";
-    std::cout << s << std::endl;
+    std::cin >> f;
+    std::cout << f << std::endl;
     return 0;
 }
