@@ -2,6 +2,7 @@
 #define STRING_DS_HPP
 
 #include <cstring>
+#include <ostream>
 class string
 {
 
@@ -94,7 +95,15 @@ public:
     int length() const { return _len; }
     int size()   const { return _len; }
 
+    friend std::ostream& operator<<(std::ostream& stream, const string& str);
+
 };
+
+std::ostream& operator<<(std::ostream& stream, const string& str)
+{
+    stream << str._str;
+    return stream;
+}
 
 
 #endif // STRING_DS_HPP
