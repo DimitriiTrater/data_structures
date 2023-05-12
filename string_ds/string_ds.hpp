@@ -99,7 +99,7 @@ public:
 
 };
 
-std::ostream& operator<<(std::ostream& stream, const string& str)
+inline std::ostream& operator<<(std::ostream& stream, const string& str)
 {
     stream << str._str;
     return stream;
