@@ -4,4 +4,5 @@ project(data_structures VERSION 0.1.0)
 
 # add_subdirectory(linked_list)
 # add_subdirectory(doubly_linked_list)
-add_subdirectory(string_ds)
+# add_subdirectory(string_ds)
+add_subdirectory(stack)
